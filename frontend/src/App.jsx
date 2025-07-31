@@ -28,6 +28,7 @@ if (!gsap.plugins.ScrollTrigger) {
 
 
 import { inject } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 inject();
 
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className='box-border' onMouseMove={handleMouseMove}>
+     <Analytics />
       <BrowserRouter>
         <ScrollToTop />
         <Background />
