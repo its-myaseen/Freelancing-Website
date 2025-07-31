@@ -26,6 +26,12 @@ if (!gsap.plugins.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+
+import { inject } from '@vercel/analytics';
+
+inject();
+
+
 function App() {
   const positionRef = useRef({ x: 0, y: 0 });
 
