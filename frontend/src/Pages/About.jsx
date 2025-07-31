@@ -162,9 +162,9 @@ const About = () => {
           alt="Banner"
           className="relative block h-full md:h-auto md:w-full object-cover top-0 md:-top-35"
         />
-        <div className="block absolute w-full h-90 -bottom-5 left-0 bg-gradient-to-b from-transparent to-black"></div>
-        <div className="block absolute -left-40 -top-40 h-[80%] w-80 bg-black blur-[80px]"></div>
-        <div className="block absolute -right-40 -top-40 h-[80%] w-80 bg-black blur-[80px]"></div>
+        <div className="block absolute w-full h-30 sm:h-90 -bottom-5 left-0 bg-gradient-to-b from-transparent to-black"></div>
+        <div className=" hidden sm:block absolute -left-40 -top-40 h-[80%] w-80 bg-black blur-[80px]"></div>
+        <div className=" hidden sm:block absolute -right-40 -top-40 h-[80%] w-80 bg-black blur-[80px]"></div>
         <div className="block absolute bottom-5 left-0 w-full box-border">
           <h1
             ref={headingRef}
