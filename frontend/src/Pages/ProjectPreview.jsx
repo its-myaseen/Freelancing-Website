@@ -81,7 +81,7 @@ const ProjectPreview = () => {
                 <img
                     src={data.thumbnail}
                     alt="Blog Thumbnail"
-                    className="block w-full h-auto object-contain"
+                    className="block h-full object-contain"
                 />
 
 
