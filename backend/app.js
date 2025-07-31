@@ -14,6 +14,7 @@ var app = express();
 
 // Define your allowed frontend origins here (replace with your frontend domains)
 const allowedOrigins = [
+  'https://devyaseen.vercel.app',
   process.env.FRONTEND_URL, // Replace with your frontend domain (production)
   'http://localhost:3000'           // For local development
 ];
