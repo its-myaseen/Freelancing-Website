@@ -81,7 +81,7 @@ const ProjectPreview = () => {
                 <img
                     src={data.thumbnail}
                     alt="Blog Thumbnail"
-                    className='block relative h-full w-full object-fill object-top'
+                    className='block relative h-full w-full object-contain object-top'
                 />
 
                 <div className='block absolute bottom-0 left-0 w-full h-40 sm:h-48 md:h-52 lg:h-60 bg-gradient-to-b from-transparent to-black'></div>
