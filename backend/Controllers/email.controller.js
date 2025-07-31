@@ -67,6 +67,11 @@ const sendContactRequest = async (req, res) => {
         console.error('Error sending email:', error);
         res.status(500).json({ error: 'Failed to send contact request' });
     }
+
+    res.header('Access-Control-Allow-Origin', 'https://devyaseen.vercel.app');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
 }
 
 module.exports = {

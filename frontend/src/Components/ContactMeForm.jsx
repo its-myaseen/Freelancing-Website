@@ -40,24 +40,31 @@ const ContactMeForm = () => {
         setIsSending(true)
 
 
-        const response = await axios.get(apiUrl, {
-            params: {
-                firstName: data.firstName,
-                lastName: data.lastName,
-                phone: data.phone,
-                email: data.email,
-                message: data.message
-            }
-        })
-
+        const response = await fetch('https://formspree.io/f/mgvzevpn', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
         console.log(response)
+
+        if (response.ok) {
+            setIsSending(false);
+            setData(dataDefault);
+        } else {
+            setMessage("Oops! Something Went Wrong")
+            setType()
+            setShowAlert(true)
+        }
 
         if (response.data.success && response.status === 200) {
             setMessage('Form submitted successfully!')
             setType('success')
             setShowAlert(true)
         } else if (response.data.error) {
-            setMessage('An Error Occured!')
+            setMessage('Oops! Something went wrong.')
             setType('error')
             setShowAlert(true)
         }
