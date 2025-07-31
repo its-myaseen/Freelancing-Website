@@ -32,7 +32,7 @@ const ProjectPreview = () => {
     }, [getProject, id])
 
 
-    
+
     const headerRef = useRef()
     const headingRef = useRef()
     const aboutBlogRef = useRef()
@@ -81,8 +81,9 @@ const ProjectPreview = () => {
                 <img
                     src={data.thumbnail}
                     alt="Blog Thumbnail"
-                    className='block relative h-full sm:w-full object-top'
+                    className="block w-full h-auto object-cover"
                 />
+
 
                 <div className='block absolute bottom-0 left-0 w-full h-40 sm:h-48 md:h-52 lg:h-60 bg-gradient-to-b from-transparent to-black'></div>
 
@@ -111,8 +112,8 @@ const ProjectPreview = () => {
 
             <div className='flex flex-col items-center gap-5 relative text-sm sm:text-[14px] md:text-[15px] mt-10 sm:mt-14 md:mt-16 lg:mt-20 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[65%] mx-auto text-gray-300 tracking-tight pb-10 sm:pb-14 md:pb-20 lg:pb-30' style={{ fontFamily: 'Poppins' }}>
                 {
-                    data.pageSS.map((path, ind)=>{
-                        return <img src={path} key={ind} className={`block relative ${data.isPWA ? `w-full md:w-[70%] lg:w-[40%]` :  `w-[false]`}`}/>
+                    data.pageSS.map((path, ind) => {
+                        return <img src={path} key={ind} className={`block relative ${data.isPWA ? `w-full md:w-[70%] lg:w-[40%]` : `w-[false]`}`} />
                     })
                 }
             </div>
