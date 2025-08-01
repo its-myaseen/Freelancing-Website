@@ -60,13 +60,23 @@ const ContactMeForm = () => {
         }
 
         if (response.data.success && response.status === 200) {
+            setShowAlert(false)
             setMessage('Form submitted successfully!')
             setType('success')
             setShowAlert(true)
+
+            setTimeout(() => {
+                setShowAlert(false)
+            }, 5000)
         } else if (response.data.error) {
+            setShowAlert(false)
             setMessage('Oops! Something went wrong.')
             setType('error')
             setShowAlert(true)
+
+            setTimeout(() => {
+                setShowAlert(false)
+            }, 5000)
         }
 
         // setData(dataDefault)
