@@ -1,11 +1,15 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useRef } from 'react'
+import { ScrollTrigger } from 'gsap/all'
+import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ServiceCard = (props) => {
     const data = props.data
     
+    useEffect(()=>{
+        ScrollTrigger.refresh();
+    })
     const cardRef = useRef()
     useGSAP(()=>{
         gsap.fromTo(cardRef.current, {
