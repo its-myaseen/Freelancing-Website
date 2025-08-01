@@ -107,22 +107,22 @@ const Footer = () => {
                 <div className="mt-6 sm:mt-0">
                     <ul className="flex items-center space-x-4">
                         <li className="w-10 cursor-none cursor-hover h-10 rounded-full flex items-center justify-center">
-                            <a className='cursor-none cursor-hover' href="javascript:void()">
+                            <a className='cursor-none cursor-hover' href="www.linkedin.com/in/yaseenthemernstackdeveloper" target='_blank'>
                                 <i class="ri-linkedin-fill text-xl text-[#b5d3f5]"></i>
                             </a>
                         </li>
 
                         <li className="w-10 h-10 cursor-none cursor-hover rounded-full flex items-center justify-center">
-                            <p className='cursor-none cursor-hover' href="javascript:void()">
-                                <a href="javascript:void()">
+                            <p className='cursor-none cursor-hover'>
+                                <a  href="https://www.instagram.com/dev_yaseen/?__pwa=1" target="_blank">
                                     <i class="ri-instagram-line cursor-none cursor-hover text-xl text-[#b5d3f5]"></i>
                                 </a>
                             </p>
                         </li>
 
                         <li className="w-10 h-10 rounded-full flex items-center justify-center">
-                            <p className='cursor-none cursor-hover' href="javascript:void()">
-                                <a href="javascript:void()">
+                            <p className='cursor-none cursor-hover'>
+                                <a href="https://wa.me/923235973947" target='_blank'>
                                     <i class="ri-whatsapp-line text-xl cursor-none text-[#b5d3f5]"></i>
                                 </a>
                             </p>
