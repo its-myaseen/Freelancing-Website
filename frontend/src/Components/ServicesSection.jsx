@@ -4,8 +4,13 @@ import { useGSAP } from '@gsap/react';
 import ServiceCard from './ServiceCard'
 import { ServicesDataContext } from '../Contexts/ServicesContext';
 import { useNavigate } from 'react-router-dom';
+import { ScrollTrigger } from 'gsap/all';
 
 const ServicesSection = () => {
+    useEffect(() => {
+        ScrollTrigger.refresh();
+    }, []);
+
 
     const [Services, setServices] = useState([
         {
@@ -19,15 +24,16 @@ const ServicesSection = () => {
 
     const { getServices } = useContext(ServicesDataContext);
 
-    useEffect(() => {
-        const array = getServices(4)
-        setServices(array)
-    }, [getServices]);
-
     const scrollerRef = useRef();
     const scrollerTrack = useRef();
     const headerRef = useRef();
     const buttonRef = useRef();
+
+    useEffect(() => {
+        const array = getServices(4);
+        console.log('Returned from getService:', array);
+        setServices(array);
+    }, [getServices]);
 
     useGSAP(() => {
         gsap.to(scrollerTrack.current, {
@@ -66,13 +72,6 @@ const ServicesSection = () => {
         })
     });
 
-    useEffect(() => {
-        const array = getServices(4);
-        console.log('Returned from getService:', array);
-        setServices(array);
-    }, [getServices]);
-
-
     const navigate = useNavigate()
 
     const handleClick = () => {
@@ -87,7 +86,7 @@ const ServicesSection = () => {
             </div>
 
             <div ref={buttonRef} className='flex justify-start sm:justify-end w-full'>
-                <button  onClick={()=>{handleClick()}} style={{ fontFamily: `"Anta", sans-serif` }} className='flex items-center justify-between mt-5 px-5 sm:px-8 h-10 sm:h-12 w-45 sm:w-62 text-white bg-[#0f1929] rounded-3xl cursor-none cursor-hover group hover:w-65 hover:scale-95 duration-500'><p className=' text-[12px] sm:text-sm'>VIEW ALL SERVICES</p><i className="ri-arrow-right-up-line font-extralight text-lg sm:text-2xl group-hover:rotate-[49deg] group-hover:text-[#b5d3f5] duration-400"></i></button>
+                <button onClick={() => { handleClick() }} style={{ fontFamily: `"Anta", sans-serif` }} className='flex items-center justify-between mt-5 px-5 sm:px-8 h-10 sm:h-12 w-45 sm:w-62 text-white bg-[#0f1929] rounded-3xl cursor-none cursor-hover group hover:w-65 hover:scale-95 duration-500'><p className=' text-[12px] sm:text-sm'>VIEW ALL SERVICES</p><i className="ri-arrow-right-up-line font-extralight text-lg sm:text-2xl group-hover:rotate-[49deg] group-hover:text-[#b5d3f5] duration-400"></i></button>
             </div>
 
             <div className='flex flex-wrap justify-center gap-5 mt-20'>
