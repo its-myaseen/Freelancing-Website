@@ -20,7 +20,7 @@ const HeroSection = () => {
     })
   })
   return (
-    <div className='relative h-[70vh] sm:h-[70vh] bg-transparent text-white sm:mt-[10vh] px-4 sm:px-8 md:px-15 overflow-hidden flex flex-col justify-center sm:justify-end items-center'>
+    <div className='relative h-[70vh] sm:h-[70vh] bg-transparent text-white sm:mt-[10vh] px-4 sm:px-8 md:px-15 flex flex-col justify-center sm:justify-end items-center'>
       <div ref={container} className='relative w-full max-w-4xl mx-auto text-center top-[10%] sm:top-0'>
         <h1 
           className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal mb-4 md:mb-6' 

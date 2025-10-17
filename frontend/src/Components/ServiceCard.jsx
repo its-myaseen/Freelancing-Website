@@ -1,29 +1,11 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, forwardRef, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ServiceCard = (props) => {
-    const data = props.data
-
-
-    const cardRef = useRef()
-    useGSAP(() => {
-        if (!cardRef.current) return;
-        gsap.fromTo(cardRef.current, { y: 100, opacity: 0 }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "expo.out",
-            scrollTrigger: {
-                trigger: cardRef.current,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    });
-
+    const data= props.data
     const navigate = useNavigate()
 
     const handleClick = () => {
@@ -31,8 +13,24 @@ const ServiceCard = (props) => {
 
     }
 
+    useGSAP(()=>{
+        gsap.utils.toArray(".Services-Card").forEach(card => {
+            gsap.fromTo(card, { y: 100, opacity: 0 }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.5,
+                ease: "expo.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        })
+    })
+
     return (
-        <div onClick={() => { handleClick() }} ref={cardRef} className="w-[100%] md:w-[49%] bg-[#0f1929] hover:bg-[#1f2b3d] hover:scale-95 duration-500 cursor-hover rounded-4xl shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden">
+        <div onClick={() => { handleClick() }} className="Services-Card w-[100%] md:w-[49%] bg-[#0f1929] hover:bg-[#1f2b3d] hover:scale-95 duration-500 cursor-hover rounded-4xl shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden">
             <div className="text-[#b5d3f5] text-5xl mb-7">
                 {data.icon}
             </div>

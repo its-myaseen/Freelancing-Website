@@ -12,6 +12,7 @@ const ServicesSection = () => {
     }, []);
 
 
+    // Stored blank data with format for initial render
     const [Services, setServices] = useState([
         {
             id: 1,
@@ -76,8 +77,10 @@ const ServicesSection = () => {
 
     const handleClick = () => {
         navigate(`/services`)
-
     }
+
+
+
     return (
         <div className='block relative box-border w-full overflow-x-hidden pt-40 pb-30 px-5 md:px-10'>
             <div ref={headerRef} className='flex flex-col sm:flex-row justify-start items-start sm:items-center gap-8 box-border w-full'>

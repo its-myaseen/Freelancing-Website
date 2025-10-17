@@ -107,7 +107,7 @@ const Footer = () => {
                 <div className="mt-6 sm:mt-0">
                     <ul className="flex items-center space-x-4">
                         <li className="w-10 cursor-none cursor-hover h-10 rounded-full flex items-center justify-center">
-                            <a className='cursor-none cursor-hover' href="www.linkedin.com/in/yaseenthemernstackdeveloper" target="_blank">
+                            <a className='cursor-none cursor-hover' href="https://www.linkedin.com/in/yaseenthemernstackdeveloper" target="_blank">
                                 <i class="ri-linkedin-fill text-xl text-[#b5d3f5]"></i>
                             </a>
                         </li>
